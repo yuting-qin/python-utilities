@@ -1,5 +1,5 @@
-import sys
-print(sys.getrecursionlimit())
+# import sys
+# print(sys.getrecursionlimit())
 
 # Fibonacci function
 # f(0) = 0
@@ -18,7 +18,7 @@ def fibonacci(n):
     else:
         return fibonacci(n-1) + fibonacci(n-2)
     
-print(fibonacci(20))
+# print(fibonacci(20))
 
 
 # Introduce dictionary in python 
@@ -34,4 +34,22 @@ def fibonacci_improved(n):
         fibonacci_dic[n] = result
         return result
 
-print(fibonacci_improved(30))
+# print(fibonacci_improved(30))
+
+# No incursion
+# Introduce list https://www.youtube.com/watch?v=OnDr4J2UXSA
+# Introduce list in python https://www.youtube.com/watch?v=ohCDWZgNIU0
+# List comprehension https://www.youtube.com/watch?v=AhSvKGTh28Q
+def fibonacci_no_incursion(n):
+    if n==0 or n==1:
+        return n
+    current = 2
+    fibonacci_list = [0,1]
+    while current<=n:
+        fibonacci_list.append(fibonacci_list[current-1] + fibonacci_list[current-2])
+        current +=1
+
+    return fibonacci_list[n]    
+
+print(fibonacci_no_incursion(5000))
+
